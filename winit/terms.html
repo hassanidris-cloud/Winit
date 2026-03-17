@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WinIT Terms of Use — terms governing use of our website and services.">
+  <title>Terms of Use — WinIT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .legal-page { max-width: var(--container-narrow); margin: 0 auto; padding: var(--space-16) var(--space-4); }
+    .legal-page h1 { font-family: var(--font-serif); font-size: var(--text-h2); margin-bottom: var(--space-8); }
+    .legal-page h2 { font-size: var(--text-h3); margin: var(--space-8) 0 var(--space-4); }
+    .legal-page p, .legal-page li { color: var(--color-text-muted); margin-bottom: var(--space-4); }
+    .legal-page a { color: var(--color-accent); }
+  </style>
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="WinIT home">WinIT</a>
+      <nav class="nav-main" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a href="index.html#contact" class="btn btn-primary btn-header">Book a Consultation</a>
+      </div>
+    </div>
+  </header>
+  <main class="legal-page">
+    <h1>Terms of Use</h1>
+    <p><strong>Last updated:</strong> [Date]. By using the WinIT website, you agree to these terms.</p>
+    <h2>Use of the website</h2>
+    <p>You may use this website for lawful purposes only. You must not use it in any way that could damage, disable, or impair the site or interfere with others’ use.</p>
+    <h2>Content</h2>
+    <p>Content on this site is for general information only. We do not guarantee that it is complete, current, or suitable for your specific situation. Professional advice should be sought for your particular needs.</p>
+    <h2>Intellectual property</h2>
+    <p>All content, design, and materials on this site are owned by WinIT or its licensors and are protected by intellectual property laws. You may not copy, modify, or distribute them without our permission.</p>
+    <h2>Services</h2>
+    <p>Specific services are governed by separate agreements. Contacting us through the website does not create a contract until we have agreed in writing.</p>
+    <h2>Limitation of liability</h2>
+    <p>To the fullest extent permitted by law, WinIT shall not be liable for any indirect, incidental, or consequential damages arising from your use of this website.</p>
+    <h2>Contact</h2>
+    <p>Questions about these terms? Contact us at <a href="mailto:hello@winit.com">hello@winit.com</a>. See our <a href="privacy.html">Privacy Policy</a> and <a href="cookies.html">Cookie Policy</a> for data practices.</p>
+  </main>
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <p class="footer-copy">© <span id="year"></span> WinIT. <a href="index.html">Home</a> · <a href="privacy.html">Privacy Policy</a> · <a href="cookies.html">Cookie Policy</a></p>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
