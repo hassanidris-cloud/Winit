@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WinIT Wireframe — Concept 1: Executive Minimal Enterprise</title>
+<style>
+/* ============================================================
+   BALSAMIQ-STYLE WIREFRAME — GRAYSCALE ONLY
+   Concept 1: Executive Minimal Enterprise
+   ============================================================ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Comic Sans MS","Chalkboard SE",cursive;background:#fff;color:#333;font-size:14px;line-height:1.55}
+.wrap{max-width:1100px;margin:0 auto;padding:0 32px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px}
+.grid-4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:24px}
+.flex-between{display:flex;justify-content:space-between;align-items:center}
+/* Wireframe label */
+.wf-bar{background:#111;color:#fff;text-align:center;padding:10px 20px;font-family:Arial,sans-serif;font-size:12px;letter-spacing:.5px}
+/* Legend */
+.wf-legend{background:#f0f0f0;border-bottom:1px solid #ccc;padding:8px 32px;font-family:Arial,sans-serif;font-size:11px;display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.leg{display:flex;align-items:center;gap:5px}
+.leg-dot{width:12px;height:12px;border-radius:2px;flex-shrink:0}
+/* Image placeholder */
+.img-ph{background:#e0e0e0;border:2px dashed #aaa;display:flex;align-items:center;justify-content:center;color:#888;font-size:12px;text-align:center;padding:12px}
+/* Buttons */
+.btn{display:inline-block;padding:10px 26px;border:2px solid #333;border-radius:3px;font-family:"Comic Sans MS",cursive;font-size:13px;background:#fff;cursor:pointer}
+.btn-dark{background:#333;color:#fff;border-color:#333}
+/* Component badges */
+.cmp{position:relative}
+.badge{position:absolute;top:4px;right:4px;padding:2px 6px;border-radius:3px;font-size:10px;font-weight:bold;z-index:20;font-family:Arial,sans-serif;white-space:nowrap}
+.badge-r{background:#4CAF50;color:#fff}
+.badge-n{background:#FF9800;color:#fff}
+/* ===== CONCEPT 1 ===== */
+/* Header */
+.c1-header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #ddd;padding:18px 0}
+.c1-logo{font-size:22px;font-weight:bold;letter-spacing:-0.5px}
+.c1-nav{display:flex;gap:28px;list-style:none}
+.c1-nav a{color:#555;text-decoration:none;font-size:13px}
+.c1-cta-btn{border:1px solid #333;padding:8px 20px;font-size:12px;border-radius:3px;text-decoration:none;color:#333;font-family:"Comic Sans MS",cursive}
+/* Hero */
+.c1-hero{padding:88px 0 72px}
+.c1-hero-inner{display:grid;grid-template-columns:57% 1fr;gap:56px;align-items:center}
+.c1-eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:#999;margin-bottom:18px}
+.c1-h1{font-size:40px;line-height:1.1;letter-spacing:-1px;margin-bottom:22px}
+.c1-hero-sub{font-size:15px;color:#666;margin-bottom:32px;line-height:1.65;max-width:460px}
+.c1-hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.c1-hero-img{height:300px;background:#ebebeb;border:2px dashed #ccc;border-radius:4px;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center}
+.c1-grid-bg{position:absolute;inset:0;background-image:linear-gradient(#ccc 1px,transparent 1px),linear-gradient(90deg,#ccc 1px,transparent 1px);background-size:20px 20px;opacity:.5}
+.c1-img-lbl{position:relative;z-index:1;background:rgba(255,255,255,.85);padding:6px 14px;border:1px solid #ccc;font-size:12px;color:#888;text-align:center}
+/* Trust strip */
+.c1-trust{padding:20px 0;background:#fafafa;border-top:1px solid #eee;border-bottom:1px solid #eee}
+.c1-trust-inner{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.c1-trust-lbl{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:#aaa;white-space:nowrap;margin-right:6px}
+.c1-badge{border:1px solid #ccc;border-radius:100px;padding:4px 14px;font-size:12px;color:#666}
+/* Services editorial numbered */
+.c1-svcs{padding:76px 0}
+.c1-svcs-hdr{margin-bottom:52px;max-width:480px}
+.c1-svcs-h2{font-size:30px;font-weight:bold;margin-bottom:10px;letter-spacing:-0.5px}
+.c1-svcs-lead{color:#666;font-size:14px}
+.c1-svc-row{display:grid;grid-template-columns:52px 1fr 1fr;gap:24px 40px;padding:36px 0;border-top:1px solid #e0e0e0;align-items:start}
+.c1-svc-row:last-of-type{border-bottom:1px solid #e0e0e0}
+.c1-svc-num{font-size:13px;color:#bbb;padding-top:3px}
+.c1-svc-title{font-size:18px;font-weight:bold;margin-bottom:9px}
+.c1-svc-text{color:#666;font-size:13px;line-height:1.65;margin-bottom:14px}
+.c1-svc-link{font-size:12px;color:#333;text-decoration:underline}
+.c1-svc-img{height:150px}
+/* Outcomes */
+.c1-outcomes{padding:64px 0;background:#fafafa;border-top:1px solid #eee;border-bottom:1px solid #eee}
+.c1-outcomes-inner{display:grid;grid-template-columns:1fr 1fr 1fr}
+.c1-stat{text-align:center;padding:16px 32px;border-right:1px solid #ddd}
+.c1-stat:last-child{border-right:none}
+.c1-stat-val{display:block;font-size:44px;font-weight:bold;letter-spacing:-2px;margin-bottom:8px}
+.c1-stat-desc{font-size:13px;color:#666}
+/* Why WinIT */
+.c1-why{padding:76px 0}
+.c1-why-h2{font-size:30px;font-weight:bold;margin-bottom:10px}
+.c1-why-lead{color:#666;font-size:14px;margin-bottom:40px}
+.c1-why-item{padding:22px 0;border-top:1px solid #eee}
+.c1-why-title{font-size:15px;font-weight:bold;margin-bottom:7px}
+.c1-why-text{font-size:13px;color:#666;max-width:260px}
+/* Tech strip */
+.c1-tech{padding:28px 0;background:#fafafa;border-top:1px solid #eee;border-bottom:1px solid #eee}
+.c1-tech-inner{display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap}
+.c1-tech-item{display:flex;flex-direction:column;align-items:center;gap:6px}
+.c1-tech-icon{width:36px;height:36px;background:#ddd;border:1px solid #ccc;border-radius:4px}
+.c1-tech-name{font-size:11px;color:#888;text-align:center}
+/* Case studies */
+.c1-cases{padding:76px 0;background:#fafafa;border-top:1px solid #eee}
+.c1-cases-h2{font-size:30px;font-weight:bold;margin-bottom:10px}
+.c1-cases-lead{color:#666;font-size:14px;margin-bottom:44px}
+.c1-case-entry{display:grid;grid-template-columns:180px 1fr;gap:36px;padding:32px 0;border-top:1px solid #ddd;align-items:start}
+.c1-case-lbl{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:#aaa;margin-top:3px}
+.c1-case-title{font-size:17px;font-weight:bold;margin-bottom:9px}
+.c1-case-excerpt{font-size:13px;color:#666;margin-bottom:12px;line-height:1.6}
+.c1-case-link{font-size:12px;color:#333;text-decoration:underline}
+/* About */
+.c1-about{padding:76px 0;border-top:1px solid #eee}
+.c1-about-h2{font-size:30px;font-weight:bold;margin-bottom:18px}
+.c1-about-p{color:#666;font-size:14px;line-height:1.7;margin-bottom:20px}
+.c1-meta-list{list-style:none}
+.c1-meta-list li{padding:9px 0;border-bottom:1px solid #eee;font-size:13px;color:#666}
+.c1-meta-list li:last-child{border-bottom:none}
+.c1-meta-list strong{color:#333;display:inline-block;min-width:80px}
+/* Testimonials */
+.c1-testimonials{padding:76px 0;background:#fafafa;border-top:1px solid #eee;border-bottom:1px solid #eee}
+.c1-t-inner{max-width:640px;margin:0 auto;text-align:center}
+.c1-qmark{font-size:56px;color:#ddd;line-height:1;margin-bottom:12px}
+.c1-qtext{font-size:19px;line-height:1.65;color:#333;margin-bottom:20px}
+.c1-qauthor{font-size:12px;color:#999}
+.c1-dots{display:flex;justify-content:center;gap:10px;margin-top:28px}
+.c1-dot{width:8px;height:8px;border-radius:50%;border:1px solid #bbb;background:#ccc}
+.c1-dot.on{background:#333;border-color:#333}
+/* CTA Banner */
+.c1-cta{padding:68px 0;background:#222;color:#fff;text-align:center}
+.c1-cta-h2{font-size:28px;margin-bottom:10px}
+.c1-cta-sub{font-size:14px;color:#bbb;margin-bottom:28px}
+.btn-outline-wht{display:inline-block;padding:12px 32px;border:2px solid #fff;color:#fff;font-family:"Comic Sans MS",cursive;font-size:14px;border-radius:3px}
+/* Contact */
+.c1-contact{padding:76px 0}
+.c1-contact-h2{font-size:30px;font-weight:bold;margin-bottom:36px}
+.c1-contact-p{font-size:14px;color:#666;margin-bottom:20px;line-height:1.65}
+.c1-detail{display:flex;align-items:flex-start;gap:10px;margin-bottom:13px;font-size:13px;color:#555}
+.c1-ico{width:18px;height:18px;background:#ddd;border-radius:50%;flex-shrink:0;margin-top:1px}
+.c1-offices{margin-top:22px}
+.c1-office{padding:10px 0;border-top:1px solid #eee;font-size:13px;color:#666}
+.c1-office strong{display:block;color:#333;font-size:12px;text-transform:uppercase;letter-spacing:.5px}
+.c1-form{background:#f9f9f9;border:1px solid #ddd;padding:28px;border-radius:4px}
+.f-row{margin-bottom:16px}
+.f-lbl{display:block;font-size:12px;font-weight:bold;color:#444;margin-bottom:5px}
+.f-input{width:100%;height:34px;border:1px solid #ccc;border-radius:3px;background:#fff}
+.f-ta{width:100%;height:80px;border:1px solid #ccc;border-radius:3px;background:#fff}
+.f-check{display:flex;gap:8px;align-items:flex-start;font-size:12px;color:#888;margin-bottom:18px}
+.f-cb{width:14px;height:14px;border:1px solid #ccc;flex-shrink:0;margin-top:1px;background:#fff}
+/* Footer */
+.c1-footer{background:#1a1a1a;color:#888;padding:56px 0 28px}
+.c1-footer-logo{color:#fff;font-size:20px;font-weight:bold;display:block;margin-bottom:9px}
+.c1-footer-tag{font-size:13px;max-width:200px;line-height:1.5}
+.ft-title{color:#ccc;font-size:11px;font-weight:bold;text-transform:uppercase;letter-spacing:1px;margin-bottom:13px}
+.ft-links{list-style:none}
+.ft-links li{margin-bottom:7px}
+.ft-links a{color:#888;text-decoration:none;font-size:12px}
+.ft-copy{border-top:1px solid #333;margin-top:36px;padding-top:18px;font-size:11px;color:#555;display:flex;justify-content:space-between}
+</style>
+</head>
+<body>
+
+<div class="wf-bar">⬜ WIREFRAME — CONCEPT 1: EXECUTIVE MINIMAL ENTERPRISE &nbsp;|&nbsp; WinIT Homepage &nbsp;|&nbsp; Balsamiq-Style, Grayscale Only</div>
+<div class="wf-legend">
+  <strong>Component tags:</strong>
+  <span class="leg"><span class="leg-dot" style="background:#4CAF50"></span> [REUSE] existing pattern from index.html</span>
+  <span class="leg"><span class="leg-dot" style="background:#FF9800"></span> [NEW] new layout / component to create</span>
+</div>
+
+<!-- ===== HEADER ===== -->
+<!-- REUSABLE: site-header (index.html) -->
+<header class="c1-header cmp">
+  <span class="badge badge-r">[REUSE] site-header</span>
+  <div class="wrap flex-between">
+    <span class="c1-logo">WinIT</span>
+    <!-- REUSABLE: nav-list -->
+    <ul class="c1-nav cmp" style="position:relative">
+      <span class="badge badge-r" style="top:-2px;right:-2px">[REUSE] nav-list</span>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Solutions</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <div style="display:flex;gap:12px;align-items:center">
+      <span style="font-size:13px;color:#aaa;cursor:pointer">⊕ Search</span>
+      <a href="#" class="c1-cta-btn cmp" style="position:relative">
+        <span class="badge badge-r" style="top:-4px;right:-4px">[REUSE] btn-header</span>
+        Book a Consultation
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO — EDITORIAL SPLIT ===== -->
+<!-- NEW COMPONENT: HeroEditorial (large left text, right pattern placeholder) -->
+<section class="c1-hero cmp">
+  <span class="badge badge-n">[NEW] HeroEditorial</span>
+  <div class="wrap">
+    <div class="c1-hero-inner">
+      <div>
+        <p class="c1-eyebrow">ERP · Systems Integration · Enterprise Software</p>
+        <h1 class="c1-h1">Integrate your systems.<br>Analyze your data.<br>Operate with clarity.</h1>
+        <p class="c1-hero-sub">WinIT delivers ERP consulting, systems integration, process automation, and custom enterprise software for manufacturing and distribution organizations.</p>
+        <div class="c1-hero-cta">
+          <a href="#" class="btn btn-dark cmp" style="position:relative"><span class="badge badge-r" style="top:-4px;right:-4px">[REUSE] btn-primary</span>Schedule a Discovery Call</a>
+          <a href="#" class="btn cmp" style="position:relative"><span class="badge badge-r" style="top:-4px;right:-4px">[REUSE] btn-secondary</span>View Case Studies</a>
+        </div>
+      </div>
+      <div class="c1-hero-img">
+        <div class="c1-grid-bg"></div>
+        <span class="c1-img-lbl">[ Hero Visual — home-banner.jpg ]<br><small>Manufacturing / Enterprise</small></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRUST STRIP ===== -->
+<!-- REUSABLE: trust-strip -->
+<section class="c1-trust cmp">
+  <span class="badge badge-r">[REUSE] trust-strip</span>
+  <div class="wrap">
+    <div class="c1-trust-inner">
+      <span class="c1-trust-lbl">Trusted by operations and IT leaders —</span>
+      <span class="c1-badge">ERP &amp; Manufacturing</span>
+      <span class="c1-badge">Systems Integration</span>
+      <span class="c1-badge">Process Automation</span>
+      <span class="c1-badge">Analytics &amp; Reporting</span>
+      <span class="c1-badge">Custom Enterprise Software</span>
+      <span class="c1-badge">Epicor · BizTalk · Power BI</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES — EDITORIAL NUMBERED ===== -->
+<!-- NEW COMPONENT: ServicesEditorial (numbered 3-col rows, no cards) -->
+<section class="c1-svcs cmp">
+  <span class="badge badge-n">[NEW] ServicesEditorial</span>
+  <div class="wrap">
+    <div class="c1-svcs-hdr">
+      <h2 class="c1-svcs-h2">What we do</h2>
+      <p class="c1-svcs-lead">Focused expertise across the systems that power modern enterprise operations.</p>
+    </div>
+
+    <div class="c1-svc-row">
+      <div class="c1-svc-num">01</div>
+      <div>
+        <div class="c1-svc-title">ERP &amp; Manufacturing Consulting</div>
+        <p class="c1-svc-text">End-to-end consulting for manufacturing and distribution environments. Deep Epicor expertise across the full ERP lifecycle — implementation, optimization, extensions, and long-term system evolution.</p>
+        <a href="#" class="c1-svc-link">Request a Quote →</a>
+      </div>
+      <div class="c1-svc-img img-ph cmp"><span class="badge badge-r">[REUSE] service-panel-visual</span>[ epicor-1.jpg ]</div>
+    </div>
+
+    <div class="c1-svc-row">
+      <div class="c1-svc-num">02</div>
+      <div>
+        <div class="c1-svc-title">Integration &amp; Process Automation</div>
+        <p class="c1-svc-text">Reliable integrations connecting ERP systems, legacy platforms, and cloud applications. Epicor Service Connect, BizTalk Server, and BAQ-driven integrations — resilient and future-ready.</p>
+        <a href="#" class="c1-svc-link">Talk to an Expert →</a>
+      </div>
+      <div class="c1-svc-img img-ph">[ biztalk.jpg ]</div>
+    </div>
+
+    <div class="c1-svc-row">
+      <div class="c1-svc-num">03</div>
+      <div>
+        <div class="c1-svc-title">Data, Reporting &amp; Analytics</div>
+        <p class="c1-svc-text">Operational data transformed into clear, actionable insights. SSRS, Power BI dashboards, and BAQ-driven reporting for management and executive teams supporting faster decisions.</p>
+        <a href="#" class="c1-svc-link">Schedule a Discovery Call →</a>
+      </div>
+      <div class="c1-svc-img img-ph">[ powerbi-1.jpg ]</div>
+    </div>
+
+    <div class="c1-svc-row">
+      <div class="c1-svc-num">04</div>
+      <div>
+        <div class="c1-svc-title">Custom &amp; Enterprise Solutions</div>
+        <p class="c1-svc-text">Scalable solutions extending ERP capabilities — MES across the full production lifecycle, custom enterprise applications, and data integration pipelines designed for long-term maintainability.</p>
+        <a href="#" class="c1-svc-link">Request a Quote →</a>
+      </div>
+      <div class="c1-svc-img img-ph">[ custom-solutions.jpg ]</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OUTCOMES / STATS ===== -->
+<!-- REUSABLE: outcomes -->
+<section class="c1-outcomes cmp">
+  <span class="badge badge-r">[REUSE] outcomes</span>
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:36px">
+      <h2 style="font-size:26px;font-weight:bold;margin-bottom:7px">Measurable impact</h2>
+      <p style="color:#888;font-size:13px">Representative results from recent engagements.</p>
+    </div>
+    <div class="c1-outcomes-inner">
+      <div class="c1-stat"><span class="c1-stat-val">40%</span><p class="c1-stat-desc">reduction in order-processing time</p></div>
+      <div class="c1-stat"><span class="c1-stat-val">Single</span><p class="c1-stat-desc">source of truth across 12 sites</p></div>
+      <div class="c1-stat"><span class="c1-stat-val">3×</span><p class="c1-stat-desc">faster month-end close</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY WINIT ===== -->
+<!-- REUSABLE: why-section -->
+<section class="c1-why cmp">
+  <span class="badge badge-r">[REUSE] why-section</span>
+  <div class="wrap">
+    <h2 class="c1-why-h2">Why WinIT</h2>
+    <p class="c1-why-lead">We combine deep ERP and manufacturing domain knowledge with disciplined, outcome-focused delivery.</p>
+    <div class="grid-3">
+      <div>
+        <div class="c1-why-item">
+          <div class="c1-why-title">Domain depth</div>
+          <p class="c1-why-text">We speak operations, finance, and shop floor — not just technology. Implementations that fit how you actually work.</p>
+        </div>
+        <div class="c1-why-item">
+          <div class="c1-why-title">Outcome-focused</div>
+          <p class="c1-why-text">Every project ties to measurable results: cycle time, data accuracy, operational visibility, and cost.</p>
+        </div>
+      </div>
+      <div>
+        <div class="c1-why-item">
+          <div class="c1-why-title">Long-term partnership</div>
+          <p class="c1-why-text">We stay for optimization, support, and evolution — not just go-live. Trusted partnerships with clients across the globe.</p>
+        </div>
+        <div class="c1-why-item">
+          <div class="c1-why-title">Disciplined delivery</div>
+          <p class="c1-why-text">Clear scope, transparent assumptions, and knowledge transfer built into every engagement.</p>
+        </div>
+      </div>
+      <div>
+        <div style="padding:20px;background:#f5f5f5;border:1px solid #ddd;border-radius:4px;font-size:13px;color:#666">
+          <div style="font-weight:bold;color:#333;margin-bottom:12px;font-size:14px">What we help you achieve</div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:9px">
+            <li>✓ Improved operational efficiency</li>
+            <li>✓ Real-time process visibility</li>
+            <li>✓ Reduced system complexity</li>
+            <li>✓ Measurable business outcomes</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TECHNOLOGY EXPERTISE ===== -->
+<!-- NEW COMPONENT: TechExpertiseStrip -->
+<section class="c1-tech cmp">
+  <span class="badge badge-n">[NEW] TechExpertiseStrip</span>
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:20px;font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:1.5px">Technology Expertise</div>
+    <div class="c1-tech-inner">
+      <div class="c1-tech-item"><div class="c1-tech-icon"></div><div class="c1-tech-name">Epicor ERP</div></div>
+      <div class="c1-tech-item"><div class="c1-tech-icon"></div><div class="c1-tech-name">BizTalk Server</div></div>
+      <div class="c1-tech-item"><div class="c1-tech-icon"></div><div class="c1-tech-name">Power BI</div></div>
+      <div class="c1-tech-item"><div class="c1-tech-icon"></div><div class="c1-tech-name">SSRS</div></div>
+      <div class="c1-tech-item"><div class="c1-tech-icon"></div><div class="c1-tech-name">Service Connect</div></div>
+      <div class="c1-tech-item"><div class="c1-tech-icon"></div><div class="c1-tech-name">BAQ</div></div>
+      <div class="c1-tech-item"><div class="c1-tech-icon"></div><div class="c1-tech-name">MES</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CASE STUDIES ===== -->
+<!-- REUSABLE: case-studies -->
+<section class="c1-cases cmp">
+  <span class="badge badge-r">[REUSE] case-studies</span>
+  <div class="wrap">
+    <h2 class="c1-cases-h2">Case studies</h2>
+    <p class="c1-cases-lead">How we've helped manufacturing and enterprise clients.</p>
+
+    <div class="c1-case-entry">
+      <div><span class="c1-case-lbl">Manufacturing · ERP</span></div>
+      <div>
+        <div class="c1-case-title">Global ERP consolidation for discrete manufacturing</div>
+        <p class="c1-case-excerpt">Unified 8 regional instances into one global template, standardizing processes and reporting across 12 plants.</p>
+        <a href="#" class="c1-case-link">Read more →</a>
+      </div>
+    </div>
+    <div class="c1-case-entry">
+      <div><span class="c1-case-lbl">Integration · Automation</span></div>
+      <div>
+        <div class="c1-case-title">Order-to-cash automation and ERP–CRM sync</div>
+        <p class="c1-case-excerpt">Automated quote-to-order and reduced manual data entry by 60% while keeping CRM and ERP in sync.</p>
+        <a href="#" class="c1-case-link">Read more →</a>
+      </div>
+    </div>
+    <div class="c1-case-entry">
+      <div><span class="c1-case-lbl">Analytics · Reporting</span></div>
+      <div>
+        <div class="c1-case-title">Real-time operations dashboards for plant leadership</div>
+        <p class="c1-case-excerpt">Replaced spreadsheets with live dashboards for production, quality, and delivery — enabling same-day decisions.</p>
+        <a href="#" class="c1-case-link">Read more →</a>
+      </div>
+    </div>
+    <div style="margin-top:36px;text-align:center"><a href="#" class="btn">View all case studies</a></div>
+  </div>
+</section>
+
+<!-- ===== ABOUT SNAPSHOT ===== -->
+<!-- REUSABLE: about-snapshot -->
+<section class="c1-about cmp">
+  <span class="badge badge-r">[REUSE] about-snapshot</span>
+  <div class="wrap">
+    <div class="grid-2" style="align-items:start">
+      <div>
+        <h2 class="c1-about-h2">Built for enterprise</h2>
+        <p class="c1-about-p">At WinIT, our service philosophy is built on Innovation, Operational Excellence, and Focused Excitement — core pillars that consistently guide our approach and enable long-term, trusted partnerships with clients across the globe.</p>
+        <p class="c1-about-p">Our team comprises highly experienced solution architects and optimization specialists with deep expertise in Epicor, BizTalk Server, and Power BI — delivering measurable business value on every engagement.</p>
+        <a href="#" class="btn btn-dark cmp" style="position:relative;margin-top:6px"><span class="badge badge-r" style="top:-4px;right:-4px">[REUSE] btn-primary</span>Talk to an Expert</a>
+      </div>
+      <div>
+        <ul class="c1-meta-list">
+          <li><strong>Focus:</strong> ERP, integration, automation, analytics</li>
+          <li><strong>Industries:</strong> Manufacturing, distribution, professional services</li>
+          <li><strong>Expertise:</strong> Epicor · BizTalk Server · Power BI · SSRS</li>
+          <li><strong>Delivery:</strong> On-site and remote · US and international</li>
+          <li><strong>USA:</strong> North Livermore Ave, Livermore, CA</li>
+          <li><strong>Portugal:</strong> Rua Jose Antunes Guimaraes, Braga</li>
+          <li><strong>UAE:</strong> Al Khabeesi Bldg, Dubai</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS — SINGLE CENTERED ===== -->
+<!-- REUSABLE: testimonials -->
+<section class="c1-testimonials cmp">
+  <span class="badge badge-r">[REUSE] testimonials</span>
+  <div class="wrap">
+    <div class="c1-t-inner">
+      <div class="c1-qmark">"</div>
+      <p class="c1-qtext">WinIT didn't just implement ERP — they helped us rethink our processes. We now close the books in days, not weeks.</p>
+      <div class="c1-qauthor">— VP Finance, discrete manufacturing</div>
+      <div class="c1-dots">
+        <span class="c1-dot on"></span>
+        <span class="c1-dot"></span>
+        <span class="c1-dot"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA BANNER ===== -->
+<!-- REUSABLE: cta-banner -->
+<section class="c1-cta cmp">
+  <span class="badge badge-r">[REUSE] cta-banner</span>
+  <div class="wrap" style="text-align:center">
+    <h2 class="c1-cta-h2">Ready to simplify your systems?</h2>
+    <p class="c1-cta-sub">Schedule a discovery call. No pitch — we'll focus on your goals and whether we're a fit.</p>
+    <a href="#" class="btn-outline-wht">Schedule a Discovery Call</a>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<!-- REUSABLE: contact section -->
+<section class="c1-contact cmp">
+  <span class="badge badge-r">[REUSE] contact</span>
+  <div class="wrap">
+    <h2 class="c1-contact-h2">Get In Touch</h2>
+    <div class="grid-2" style="align-items:start">
+      <div>
+        <p class="c1-contact-p">Have any questions? We are always open to talk about your business, new projects, creative opportunities, and how we can help you.</p>
+        <div class="c1-detail"><span class="c1-ico"></span><span>info@winit.biz</span></div>
+        <div class="c1-detail"><span class="c1-ico"></span><span>linkedin.com/company/winit-biz</span></div>
+        <div class="c1-offices">
+          <div class="c1-office"><strong>USA</strong>North Livermore Ave, Livermore, CA</div>
+          <div class="c1-office"><strong>Portugal</strong>Rua Jose Antunes Guimaraes, Braga</div>
+          <div class="c1-office"><strong>UAE</strong>Al Khabeesi Bldg, Dubai</div>
+        </div>
+      </div>
+      <!-- REUSABLE: contact-form -->
+      <div class="c1-form cmp">
+        <span class="badge badge-r">[REUSE] contact-form</span>
+        <div class="f-row"><label class="f-lbl">Name *</label><div class="f-input"></div></div>
+        <div class="f-row"><label class="f-lbl">Email *</label><div class="f-input"></div></div>
+        <div class="f-row"><label class="f-lbl">Company</label><div class="f-input"></div></div>
+        <div class="f-row"><label class="f-lbl">Message *</label><div class="f-ta"></div></div>
+        <div class="f-check"><div class="f-cb"></div><span>I agree to the Privacy Policy and consent to WinIT contacting me about my inquiry. (GDPR)</span></div>
+        <a href="#" class="btn btn-dark">Send message</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<!-- REUSABLE: site-footer -->
+<footer class="c1-footer cmp">
+  <span class="badge badge-r">[REUSE] site-footer</span>
+  <div class="wrap">
+    <div class="grid-4" style="margin-bottom:40px">
+      <div>
+        <span class="c1-footer-logo">WinIT</span>
+        <p class="c1-footer-tag">ERP, integration, and automation for manufacturing and enterprise.</p>
+      </div>
+      <div>
+        <div class="ft-title">Services</div>
+        <ul class="ft-links">
+          <li><a href="#">ERP Consulting</a></li>
+          <li><a href="#">Integration</a></li>
+          <li><a href="#">Analytics</a></li>
+          <li><a href="#">Custom Solutions</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-title">Company</div>
+        <ul class="ft-links">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Case Studies</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-title">Contact</div>
+        <div style="font-size:12px;color:#777;line-height:2">
+          info@winit.biz<br>
+          Livermore, CA · USA<br>
+          Braga · Portugal<br>
+          Dubai · UAE
+        </div>
+      </div>
+    </div>
+    <div class="ft-copy">
+      <span>© 2026 WinIT. All rights reserved.</span>
+      <span><a href="#" style="color:#555">Privacy</a> · <a href="#" style="color:#555">Cookies</a> · <a href="#" style="color:#555">Terms</a></span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

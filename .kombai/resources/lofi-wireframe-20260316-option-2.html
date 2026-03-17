@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WinIT Wireframe — Concept 2: Structured Tech Systems</title>
+<style>
+/* ============================================================
+   BALSAMIQ-STYLE WIREFRAME — GRAYSCALE ONLY
+   Concept 2: Structured Tech Systems
+   ============================================================ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Comic Sans MS","Chalkboard SE",cursive;background:#fff;color:#333;font-size:14px;line-height:1.55}
+.wrap{max-width:1100px;margin:0 auto;padding:0 32px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px}
+.grid-4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:20px}
+.flex-between{display:flex;justify-content:space-between;align-items:center}
+.flex-center{display:flex;align-items:center;gap:12px}
+/* Wireframe label */
+.wf-bar{background:#111;color:#fff;text-align:center;padding:10px 20px;font-family:Arial,sans-serif;font-size:12px;letter-spacing:.5px}
+/* Legend */
+.wf-legend{background:#f0f0f0;border-bottom:1px solid #ccc;padding:8px 32px;font-family:Arial,sans-serif;font-size:11px;display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.leg{display:flex;align-items:center;gap:5px}
+.leg-dot{width:12px;height:12px;border-radius:2px;flex-shrink:0}
+/* Image placeholder */
+.img-ph{background:#e0e0e0;border:2px dashed #aaa;display:flex;align-items:center;justify-content:center;color:#888;font-size:12px;text-align:center;padding:12px}
+/* Buttons */
+.btn{display:inline-block;padding:10px 24px;border:2px solid #333;border-radius:3px;font-family:"Comic Sans MS",cursive;font-size:13px;background:#fff;cursor:pointer}
+.btn-dark{background:#333;color:#fff;border-color:#333}
+.btn-sm{padding:7px 16px;font-size:12px;border-width:1.5px}
+/* Component badges */
+.cmp{position:relative}
+.badge{position:absolute;top:4px;right:4px;padding:2px 6px;border-radius:3px;font-size:10px;font-weight:bold;z-index:20;font-family:Arial,sans-serif;white-space:nowrap}
+.badge-r{background:#4CAF50;color:#fff}
+.badge-n{background:#FF9800;color:#fff}
+/* ===== CONCEPT 2 ===== */
+/* Utility bar */
+.c2-util{background:#f5f5f5;border-bottom:1px solid #e0e0e0;padding:6px 0;font-size:11px;color:#888}
+.c2-util-inner{display:flex;justify-content:flex-end;gap:20px;align-items:center}
+/* Header */
+.c2-header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #ddd;padding:16px 0}
+.c2-logo{font-size:21px;font-weight:bold;letter-spacing:-0.5px}
+.c2-nav{display:flex;gap:24px;list-style:none}
+.c2-nav a{color:#555;text-decoration:none;font-size:13px}
+.c2-cta-btn{background:#333;color:#fff;border:none;padding:9px 22px;font-size:12px;border-radius:3px;font-family:"Comic Sans MS",cursive;cursor:pointer}
+/* Hero: 55/45 split */
+.c2-hero{padding:72px 0;background:#f8f8f8;border-bottom:1px solid #ddd}
+.c2-hero-inner{display:grid;grid-template-columns:55% 1fr;gap:48px;align-items:center}
+.c2-eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:#999;margin-bottom:16px}
+.c2-h1{font-size:36px;line-height:1.15;letter-spacing:-0.5px;margin-bottom:18px}
+.c2-hero-sub{font-size:14px;color:#666;margin-bottom:28px;line-height:1.65}
+.c2-hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+/* Architecture diagram */
+.c2-arch{background:#fff;border:1px solid #ddd;border-radius:6px;padding:20px;min-height:280px;position:relative}
+.c2-arch-title{font-size:11px;font-weight:bold;text-transform:uppercase;letter-spacing:1px;color:#aaa;margin-bottom:16px;text-align:center}
+.arch-row{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:14px}
+.arch-box{border:1px solid #bbb;border-radius:3px;padding:6px 12px;font-size:11px;color:#555;background:#f5f5f5;text-align:center;min-width:80px}
+.arch-box-main{border:2px solid #666;background:#e8e8e8;font-weight:bold;color:#333}
+.arch-arrow{font-size:14px;color:#aaa;flex-shrink:0}
+.arch-vert{display:flex;flex-direction:column;align-items:center;gap:6px}
+/* Technology trust strip */
+.c2-tech-strip{padding:18px 0;border-bottom:1px solid #eee;background:#fff}
+.c2-tech-inner{display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap}
+.c2-tech-lbl{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:#aaa;margin-right:20px;white-space:nowrap}
+.c2-tech-pill{border:1px solid #ccc;padding:5px 16px;font-size:12px;color:#555;border-right:none}
+.c2-tech-pill:last-child{border-right:1px solid #ccc}
+/* Services 2x2 grid */
+.c2-svcs{padding:72px 0;background:#fff}
+.c2-svcs-hdr{margin-bottom:44px}
+.c2-svcs-h2{font-size:28px;font-weight:bold;margin-bottom:10px}
+.c2-svcs-lead{font-size:14px;color:#666}
+.c2-svc-module{border:1px solid #ddd;border-radius:4px;padding:28px;background:#fafafa}
+.c2-svc-icon{width:40px;height:40px;background:#ddd;border:1px solid #ccc;border-radius:4px;margin-bottom:14px}
+.c2-svc-title{font-size:16px;font-weight:bold;margin-bottom:10px}
+.c2-svc-text{font-size:13px;color:#666;line-height:1.6;margin-bottom:14px}
+.c2-svc-bullets{list-style:none;margin-bottom:16px}
+.c2-svc-bullets li{font-size:12px;color:#888;padding:3px 0;border-bottom:1px solid #ebebeb}
+.c2-svc-bullets li::before{content:"→ ";color:#aaa}
+.c2-svc-link{font-size:12px;color:#333;text-decoration:underline}
+/* Integration flow */
+.c2-flow{padding:60px 0;background:#f5f5f5;border-top:1px solid #ddd;border-bottom:1px solid #ddd}
+.c2-flow-h2{font-size:26px;font-weight:bold;margin-bottom:8px;text-align:center}
+.c2-flow-sub{font-size:13px;color:#888;text-align:center;margin-bottom:36px}
+.c2-flow-diagram{background:#fff;border:1px solid #ddd;border-radius:6px;padding:28px;margin:0 auto;max-width:860px}
+.flow-row{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:12px}
+.flow-box{border:1px solid #bbb;border-radius:3px;padding:8px 16px;font-size:12px;color:#555;background:#f9f9f9;text-align:center;min-width:110px}
+.flow-box-center{border:2px solid #666;background:#e8e8e8;font-weight:bold;color:#333}
+.flow-arrow{font-size:16px;color:#bbb}
+.flow-connector{display:flex;flex-direction:column;align-items:center}
+.flow-vert-arrow{font-size:14px;color:#bbb;line-height:1}
+/* Stats */
+.c2-stats{padding:56px 0;background:#fff;border-bottom:1px solid #eee}
+.c2-stats-h2{font-size:26px;font-weight:bold;margin-bottom:8px}
+.c2-stats-sub{font-size:14px;color:#888;margin-bottom:36px}
+.c2-stats-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border:1px solid #ddd;border-radius:4px;overflow:hidden}
+.c2-stat-block{padding:28px 32px;text-align:center;border-right:1px solid #ddd}
+.c2-stat-block:last-child{border-right:none}
+.c2-stat-val{display:block;font-size:40px;font-weight:bold;letter-spacing:-1.5px;margin-bottom:6px}
+.c2-stat-lbl{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#aaa;margin-bottom:4px;display:block}
+.c2-stat-desc{font-size:13px;color:#666}
+/* Why WinIT — numbered */
+.c2-why{padding:72px 0;background:#fafafa;border-bottom:1px solid #eee}
+.c2-why-h2{font-size:26px;font-weight:bold;margin-bottom:36px}
+.c2-why-item{display:flex;gap:20px;align-items:flex-start;padding:20px;background:#fff;border:1px solid #ddd;border-radius:4px}
+.c2-why-num{font-size:28px;font-weight:bold;color:#ddd;flex-shrink:0;line-height:1;margin-top:2px}
+.c2-why-title{font-size:15px;font-weight:bold;margin-bottom:6px}
+.c2-why-text{font-size:13px;color:#666;line-height:1.6}
+/* Tech expertise */
+.c2-expertise{padding:32px 0;background:#fff;border-bottom:1px solid #eee}
+.c2-exp-inner{display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap}
+.c2-exp-lbl{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:#aaa;margin-right:8px}
+.c2-exp-tag{border:1px solid #ccc;border-radius:3px;padding:5px 14px;font-size:12px;color:#555;display:flex;align-items:center;gap:8px}
+.c2-exp-dot{width:8px;height:8px;background:#ccc;border-radius:50%;flex-shrink:0}
+/* Case studies — tabular list */
+.c2-cases{padding:72px 0;background:#fafafa;border-bottom:1px solid #eee}
+.c2-cases-h2{font-size:26px;font-weight:bold;margin-bottom:8px}
+.c2-cases-sub{font-size:14px;color:#888;margin-bottom:32px}
+.c2-case-table{width:100%;border-collapse:collapse}
+.c2-case-table th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#aaa;padding:10px 16px;border-bottom:2px solid #ddd;font-weight:bold}
+.c2-case-table td{padding:16px;border-bottom:1px solid #eee;vertical-align:top;font-size:13px}
+.c2-case-table tr:hover td{background:#f5f5f5}
+.c2-case-label-cell{font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:1px;white-space:nowrap}
+.c2-case-title-cell{font-weight:bold;color:#333;margin-bottom:5px}
+.c2-case-excerpt-cell{color:#666;line-height:1.5}
+.c2-case-link-cell a{font-size:12px;color:#333;text-decoration:underline;white-space:nowrap}
+/* About */
+.c2-about{padding:72px 0;background:#fff;border-bottom:1px solid #eee}
+.c2-about-h2{font-size:26px;font-weight:bold;margin-bottom:18px}
+.c2-about-p{color:#666;font-size:14px;line-height:1.7;margin-bottom:16px}
+.c2-exp-list{list-style:none;padding:0}
+.c2-exp-list li{padding:9px 0;border-bottom:1px solid #eee;font-size:13px;color:#666;display:flex;align-items:center;gap:8px}
+.c2-exp-list li::before{content:"◆";font-size:8px;color:#bbb;flex-shrink:0}
+.c2-exp-list strong{color:#333;margin-left:4px}
+/* Testimonials — 2 column */
+.c2-testimonials{padding:72px 0;background:#fafafa;border-bottom:1px solid #eee}
+.c2-t-h2{font-size:26px;font-weight:bold;margin-bottom:32px}
+.c2-testimonial{border:1px solid #ddd;border-radius:4px;padding:24px;background:#fff}
+.c2-t-quote{font-size:15px;color:#333;line-height:1.65;margin-bottom:16px;font-style:italic}
+.c2-t-author{font-size:12px;color:#999;padding-top:12px;border-top:1px solid #eee}
+/* Contact — 3 offices + form */
+.c2-contact{padding:72px 0}
+.c2-contact-h2{font-size:26px;font-weight:bold;margin-bottom:8px}
+.c2-contact-sub{font-size:14px;color:#888;margin-bottom:36px}
+.c2-offices-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-bottom:40px}
+.c2-office-card{border:1px solid #ddd;border-radius:4px;padding:20px;background:#fafafa}
+.c2-office-region{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:#aaa;margin-bottom:8px}
+.c2-office-name{font-size:14px;font-weight:bold;color:#333;margin-bottom:6px}
+.c2-office-addr{font-size:13px;color:#666;line-height:1.5}
+.c2-contact-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:40px;align-items:start}
+.c2-contact-info{font-size:14px;color:#666}
+.c2-contact-detail{display:flex;gap:10px;align-items:flex-start;margin-bottom:12px}
+.c2-ico{width:18px;height:18px;background:#ddd;border-radius:50%;flex-shrink:0;margin-top:2px}
+.c2-form{background:#f9f9f9;border:1px solid #ddd;padding:28px;border-radius:4px}
+.f-row{margin-bottom:16px}
+.f-lbl{display:block;font-size:12px;font-weight:bold;color:#444;margin-bottom:5px}
+.f-input{width:100%;height:34px;border:1px solid #ccc;border-radius:3px;background:#fff}
+.f-ta{width:100%;height:80px;border:1px solid #ccc;border-radius:3px;background:#fff}
+.f-check{display:flex;gap:8px;align-items:flex-start;font-size:12px;color:#888;margin-bottom:18px}
+.f-cb{width:14px;height:14px;border:1px solid #ccc;flex-shrink:0;margin-top:1px;background:#fff}
+/* CTA Banner */
+.c2-cta{padding:64px 0;background:#333;color:#fff;text-align:center}
+.c2-cta-h2{font-size:26px;margin-bottom:10px}
+.c2-cta-sub{font-size:14px;color:#bbb;margin-bottom:26px}
+.btn-outline-wht{display:inline-block;padding:12px 32px;border:2px solid #fff;color:#fff;font-family:"Comic Sans MS",cursive;font-size:14px;border-radius:3px}
+/* Footer */
+.c2-footer{background:#1a1a1a;color:#888;padding:52px 0 26px}
+.c2-footer-logo{color:#fff;font-size:20px;font-weight:bold;display:block;margin-bottom:9px}
+.c2-footer-tag{font-size:13px;max-width:200px;line-height:1.5}
+.ft-title{color:#ccc;font-size:11px;font-weight:bold;text-transform:uppercase;letter-spacing:1px;margin-bottom:13px}
+.ft-links{list-style:none}
+.ft-links li{margin-bottom:7px}
+.ft-links a{color:#888;text-decoration:none;font-size:12px}
+.ft-copy{border-top:1px solid #333;margin-top:36px;padding-top:18px;font-size:11px;color:#555;display:flex;justify-content:space-between}
+</style>
+</head>
+<body>
+
+<div class="wf-bar">⬜ WIREFRAME — CONCEPT 2: STRUCTURED TECH SYSTEMS &nbsp;|&nbsp; WinIT Homepage &nbsp;|&nbsp; Balsamiq-Style, Grayscale Only</div>
+<div class="wf-legend">
+  <strong>Component tags:</strong>
+  <span class="leg"><span class="leg-dot" style="background:#4CAF50"></span> [REUSE] existing pattern from index.html</span>
+  <span class="leg"><span class="leg-dot" style="background:#FF9800"></span> [NEW] new layout / component to create</span>
+</div>
+
+<!-- ===== UTILITY BAR ===== -->
+<!-- NEW COMPONENT: UtilityBar (top contact/social strip) -->
+<div class="c2-util cmp">
+  <span class="badge badge-n">[NEW] UtilityBar</span>
+  <div class="wrap">
+    <div class="c2-util-inner">
+      <span>📧 info@winit.biz</span>
+      <span>🔗 linkedin.com/company/winit-biz</span>
+      <span>|</span>
+      <span>Livermore CA · Braga PT · Dubai UAE</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== HEADER ===== -->
+<!-- REUSABLE: site-header -->
+<header class="c2-header cmp">
+  <span class="badge badge-r">[REUSE] site-header</span>
+  <div class="wrap flex-between">
+    <span class="c2-logo">WinIT</span>
+    <!-- REUSABLE: nav-list -->
+    <ul class="c2-nav cmp" style="position:relative">
+      <span class="badge badge-r" style="top:-2px;right:-2px">[REUSE] nav-list</span>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Solutions</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <button class="c2-cta-btn cmp" style="position:relative">
+      <span class="badge badge-r" style="top:-4px;right:-4px">[REUSE] btn-header</span>
+      Book a Consultation
+    </button>
+  </div>
+</header>
+
+<!-- ===== HERO — SPLIT WITH ARCHITECTURE DIAGRAM ===== -->
+<!-- NEW COMPONENT: HeroSplit (55/45, text + system diagram) -->
+<section class="c2-hero cmp">
+  <span class="badge badge-n">[NEW] HeroSplit</span>
+  <div class="wrap">
+    <div class="c2-hero-inner">
+      <div>
+        <p class="c2-eyebrow">Enterprise ERP · Integration Architecture · Analytics</p>
+        <h1 class="c2-h1">Enterprise systems that<br>integrate, scale, and deliver<br>measurable results.</h1>
+        <p class="c2-hero-sub">WinIT provides end-to-end ERP consulting, systems integration, and custom enterprise software for manufacturing and distribution organizations. Deep expertise. Disciplined delivery.</p>
+        <div class="c2-hero-cta">
+          <a href="#" class="btn btn-dark cmp" style="position:relative"><span class="badge badge-r" style="top:-4px;right:-4px">[REUSE] btn-primary</span>Schedule a Discovery Call</a>
+          <a href="#" class="btn cmp" style="position:relative"><span class="badge badge-r" style="top:-4px;right:-4px">[REUSE] btn-secondary</span>View Case Studies</a>
+        </div>
+      </div>
+      <!-- NEW COMPONENT: ArchitectureDiagram -->
+      <div class="c2-arch cmp">
+        <span class="badge badge-n">[NEW] ArchDiagram</span>
+        <div class="c2-arch-title">Typical Integration Architecture</div>
+        <div style="margin-bottom:8px">
+          <div class="arch-row">
+            <div class="arch-box">ERP System<br><small style="color:#aaa">(Epicor)</small></div>
+            <div class="arch-arrow">⟷</div>
+            <div class="arch-box arch-box-main">Service Connect<br>/ BizTalk</div>
+            <div class="arch-arrow">⟷</div>
+            <div class="arch-box">Cloud App<br><small style="color:#aaa">(CRM / WMS)</small></div>
+          </div>
+          <div style="display:flex;justify-content:center;margin:6px 0">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:2px">
+              <div class="flow-vert-arrow">↕</div>
+            </div>
+          </div>
+          <div class="arch-row">
+            <div class="arch-box">Legacy System</div>
+            <div class="arch-arrow">→</div>
+            <div class="arch-box arch-box-main">Data Layer<br>(BAQ / ETL)</div>
+            <div class="arch-arrow">→</div>
+            <div class="arch-box">Power BI<br>/ SSRS</div>
+          </div>
+          <div style="display:flex;justify-content:center;margin:6px 0">
+            <div class="flow-vert-arrow">↕</div>
+          </div>
+          <div class="arch-row">
+            <div class="arch-box">MES / Shop Floor</div>
+            <div class="arch-arrow">⟷</div>
+            <div class="arch-box arch-box-main">ERP Core</div>
+            <div class="arch-arrow">⟷</div>
+            <div class="arch-box">Reporting<br>/ Analytics</div>
+          </div>
+        </div>
+        <div style="text-align:center;font-size:11px;color:#bbb;margin-top:10px">[ Placeholder — actual diagram per client ]</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TECHNOLOGY TRUST STRIP ===== -->
+<!-- NEW COMPONENT: TechTrustStrip -->
+<section class="c2-tech-strip cmp">
+  <span class="badge badge-n">[NEW] TechTrustStrip</span>
+  <div class="wrap">
+    <div class="c2-tech-inner">
+      <span class="c2-tech-lbl">Technology stack —</span>
+      <span class="c2-tech-pill">Epicor ERP</span>
+      <span class="c2-tech-pill">BizTalk Server</span>
+      <span class="c2-tech-pill">Epicor Service Connect</span>
+      <span class="c2-tech-pill">Power BI</span>
+      <span class="c2-tech-pill">SSRS</span>
+      <span class="c2-tech-pill">BAQ</span>
+      <span class="c2-tech-pill">BPM</span>
+      <span class="c2-tech-pill">MES</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES — 2×2 MODULE GRID ===== -->
+<!-- NEW COMPONENT: ServicesModuleGrid (2x2 with icons, bullets, structure) -->
+<section class="c2-svcs cmp">
+  <span class="badge badge-n">[NEW] ServicesModuleGrid</span>
+  <div class="wrap">
+    <div class="c2-svcs-hdr">
+      <h2 class="c2-svcs-h2">What we do</h2>
+      <p class="c2-svcs-lead">Four core service areas covering the full enterprise systems lifecycle.</p>
+    </div>
+    <div class="grid-2">
+      <!-- REUSABLE: service-panel structure -->
+      <div class="c2-svc-module cmp">
+        <span class="badge badge-r">[REUSE] service-panel</span>
+        <div class="c2-svc-icon"></div>
+        <div class="c2-svc-title">ERP &amp; Manufacturing Consulting</div>
+        <p class="c2-svc-text">End-to-end consulting for organizations operating complex manufacturing and distribution environments. Deep Epicor lifecycle expertise.</p>
+        <ul class="c2-svc-bullets">
+          <li>Streamlined manufacturing and operational workflows</li>
+          <li>Improved data accuracy and cross-departmental visibility</li>
+          <li>ERP solutions aligned with real-world shop-floor processes</li>
+        </ul>
+        <a href="#" class="c2-svc-link">Request a Quote →</a>
+      </div>
+
+      <div class="c2-svc-module cmp">
+        <span class="badge badge-r">[REUSE] service-panel</span>
+        <div class="c2-svc-icon"></div>
+        <div class="c2-svc-title">Integration &amp; Process Automation</div>
+        <p class="c2-svc-text">ERP-to-ERP, ERP-to-cloud, and legacy system integrations. Business process automation and workflow orchestration via BizTalk and Service Connect.</p>
+        <ul class="c2-svc-bullets">
+          <li>Epicor Service Connect, BizTalk Server, BAQ-driven integrations</li>
+          <li>Performance optimization of existing integration platforms</li>
+          <li>Reduced manual effort, improved operational reliability</li>
+        </ul>
+        <a href="#" class="c2-svc-link">Talk to an Expert →</a>
+      </div>
+
+      <div class="c2-svc-module cmp">
+        <span class="badge badge-r">[REUSE] service-panel</span>
+        <div class="c2-svc-icon"></div>
+        <div class="c2-svc-title">Data, Reporting &amp; Analytics</div>
+        <p class="c2-svc-text">BAQ-driven data access, SSRS, and Power BI. Operational and management reporting (MES, MIS, KPIs) with secure publishing and governance.</p>
+        <ul class="c2-svc-bullets">
+          <li>Interactive dashboards and decision-support analytics</li>
+          <li>Performance-optimized data models</li>
+          <li>Reporting for operations, management, and executive teams</li>
+        </ul>
+        <a href="#" class="c2-svc-link">Schedule a Discovery Call →</a>
+      </div>
+
+      <div class="c2-svc-module cmp">
+        <span class="badge badge-r">[REUSE] service-panel</span>
+        <div class="c2-svc-icon"></div>
+        <div class="c2-svc-title">Custom &amp; Enterprise Solutions</div>
+        <p class="c2-svc-text">MES across the full production lifecycle, custom enterprise and web applications, ETL and data integration pipelines supporting analytics and reporting.</p>
+        <ul class="c2-svc-bullets">
+          <li>Manufacturing Execution Systems (MES)</li>
+          <li>Custom enterprise applications — scalable and secure</li>
+          <li>Long-term operational sustainability focus</li>
+        </ul>
+        <a href="#" class="c2-svc-link">Request a Quote →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INTEGRATION FLOW DIAGRAM ===== -->
+<!-- NEW COMPONENT: IntegrationFlowSection -->
+<section class="c2-flow cmp">
+  <span class="badge badge-n">[NEW] IntegrationFlowSection</span>
+  <div class="wrap">
+    <h2 class="c2-flow-h2">Integration &amp; Connectivity</h2>
+    <p class="c2-flow-sub">We design integrations that connect your enterprise systems — end to end.</p>
+    <div class="c2-flow-diagram">
+      <div style="font-size:11px;color:#aaa;text-align:center;margin-bottom:20px;text-transform:uppercase;letter-spacing:1px">Enterprise Integration Architecture Overview</div>
+      <div class="flow-row">
+        <div style="display:flex;flex-direction:column;gap:8px;align-items:center">
+          <div class="flow-box">ERP (Epicor)</div>
+          <div class="flow-box">Legacy Systems</div>
+          <div class="flow-box">MES / Shop Floor</div>
+        </div>
+        <div class="flow-arrow" style="font-size:24px;margin:0 16px">⟶</div>
+        <div class="flow-box flow-box-center" style="padding:20px 28px;font-size:14px">Integration<br>Middleware<br><small style="font-weight:normal;color:#888">(BizTalk / Service Connect)</small></div>
+        <div class="flow-arrow" style="font-size:24px;margin:0 16px">⟶</div>
+        <div style="display:flex;flex-direction:column;gap:8px;align-items:center">
+          <div class="flow-box">Cloud Apps (CRM, WMS)</div>
+          <div class="flow-box">Analytics (Power BI)</div>
+          <div class="flow-box">Reporting (SSRS)</div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:16px;font-size:12px;color:#aaa">
+        ↕ BAQ-driven data layer · ETL pipelines · Real-time &amp; batch processing
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OUTCOMES / STATS ===== -->
+<!-- REUSABLE: outcomes -->
+<section class="c2-stats cmp">
+  <span class="badge badge-r">[REUSE] outcomes</span>
+  <div class="wrap">
+    <h2 class="c2-stats-h2">Measurable impact</h2>
+    <p class="c2-stats-sub">Representative results from recent engagements.</p>
+    <div class="c2-stats-grid">
+      <div class="c2-stat-block">
+        <span class="c2-stat-lbl">Efficiency</span>
+        <span class="c2-stat-val">40%</span>
+        <div class="c2-stat-desc">reduction in order-processing time</div>
+      </div>
+      <div class="c2-stat-block">
+        <span class="c2-stat-lbl">Visibility</span>
+        <span class="c2-stat-val">Single</span>
+        <div class="c2-stat-desc">source of truth across 12 sites</div>
+      </div>
+      <div class="c2-stat-block">
+        <span class="c2-stat-lbl">Finance</span>
+        <span class="c2-stat-val">3×</span>
+        <div class="c2-stat-desc">faster month-end close</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY WINIT — NUMBERED ===== -->
+<!-- REUSABLE: why-section -->
+<section class="c2-why cmp">
+  <span class="badge badge-r">[REUSE] why-section</span>
+  <div class="wrap">
+    <h2 class="c2-why-h2">Why WinIT</h2>
+    <div class="grid-3">
+      <div class="c2-why-item">
+        <div class="c2-why-num">01</div>
+        <div>
+          <div class="c2-why-title">Domain depth</div>
+          <p class="c2-why-text">We speak operations, finance, and shop floor. Implementations aligned with how you work — not a generic template.</p>
+        </div>
+      </div>
+      <div class="c2-why-item">
+        <div class="c2-why-num">02</div>
+        <div>
+          <div class="c2-why-title">Outcome-focused</div>
+          <p class="c2-why-text">Every project ties to measurable results: cycle time, data accuracy, integration reliability, and operational cost.</p>
+        </div>
+      </div>
+      <div class="c2-why-item">
+        <div class="c2-why-num">03</div>
+        <div>
+          <div class="c2-why-title">Long-term partnership</div>
+          <p class="c2-why-text">We stay for optimization, support, and evolution — not just go-live. Trusted partnerships with clients across the globe.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TECHNOLOGY & PLATFORM EXPERTISE ===== -->
+<!-- NEW COMPONENT: PlatformExpertiseBar -->
+<section class="c2-expertise cmp" style="padding:28px 0;background:#fff;border-bottom:1px solid #eee">
+  <span class="badge badge-n">[NEW] PlatformExpertiseBar</span>
+  <div class="wrap">
+    <div class="c2-exp-inner">
+      <span class="c2-exp-lbl">Platform expertise</span>
+      <div class="c2-exp-tag"><span class="c2-exp-dot"></span>Epicor ERP</div>
+      <div class="c2-exp-tag"><span class="c2-exp-dot"></span>Microsoft BizTalk Server</div>
+      <div class="c2-exp-tag"><span class="c2-exp-dot"></span>Power BI</div>
+      <div class="c2-exp-tag"><span class="c2-exp-dot"></span>SSRS</div>
+      <div class="c2-exp-tag"><span class="c2-exp-dot"></span>BAQ / BPM</div>
+      <div class="c2-exp-tag"><span class="c2-exp-dot"></span>MES</div>
+      <div class="c2-exp-tag"><span class="c2-exp-dot"></span>Azure</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CASE STUDIES — TABULAR LIST ===== -->
+<!-- NEW COMPONENT: CaseStudiesTable (horizontal tabular layout) -->
+<section class="c2-cases cmp">
+  <span class="badge badge-n">[NEW] CaseStudiesTable</span>
+  <div class="wrap">
+    <h2 class="c2-cases-h2">Case studies</h2>
+    <p class="c2-cases-sub">How we've helped manufacturing and enterprise clients.</p>
+    <table class="c2-case-table">
+      <thead>
+        <tr>
+          <th style="width:140px">Industry · Service</th>
+          <th>Project</th>
+          <th>Outcome</th>
+          <th style="width:80px">Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="c2-case-label-cell">Manufacturing · ERP</td>
+          <td><div class="c2-case-title-cell">Global ERP consolidation for discrete manufacturing</div><div class="c2-case-excerpt-cell">Unified 8 regional instances into one global template across 12 plants.</div></td>
+          <td style="font-size:13px;color:#555">Standardized processes, single source of truth</td>
+          <td class="c2-case-link-cell"><a href="#">Read more →</a></td>
+        </tr>
+        <tr>
+          <td class="c2-case-label-cell">Integration · Auto</td>
+          <td><div class="c2-case-title-cell">Order-to-cash automation and ERP–CRM sync</div><div class="c2-case-excerpt-cell">Automated quote-to-order, reduced manual data entry by 60%.</div></td>
+          <td style="font-size:13px;color:#555">60% reduction in manual entry, real-time sync</td>
+          <td class="c2-case-link-cell"><a href="#">Read more →</a></td>
+        </tr>
+        <tr>
+          <td class="c2-case-label-cell">Analytics · BI</td>
+          <td><div class="c2-case-title-cell">Real-time dashboards for plant leadership</div><div class="c2-case-excerpt-cell">Replaced spreadsheets with live dashboards for production, quality, delivery.</div></td>
+          <td style="font-size:13px;color:#555">Same-day operational decisions at executive level</td>
+          <td class="c2-case-link-cell"><a href="#">Read more →</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="margin-top:24px"><a href="#" class="btn btn-sm">View all case studies</a></div>
+  </div>
+</section>
+
+<!-- ===== ABOUT SNAPSHOT ===== -->
+<!-- REUSABLE: about-snapshot -->
+<section class="c2-about cmp">
+  <span class="badge badge-r">[REUSE] about-snapshot</span>
+  <div class="wrap">
+    <div class="grid-2" style="align-items:start">
+      <div>
+        <h2 class="c2-about-h2">About WinIT</h2>
+        <p class="c2-about-p">At WinIT, our service philosophy is built on Innovation, Operational Excellence, and Focused Excitement — core pillars that guide every engagement and enable long-term, trusted partnerships with clients across the globe.</p>
+        <p class="c2-about-p">We design and deliver customized software solutions tailored to the unique operational and strategic needs of each organization — helping clients improve efficiency, integration, and decision-making.</p>
+        <a href="#" class="btn btn-dark cmp" style="position:relative;margin-top:8px"><span class="badge badge-r" style="top:-4px;right:-4px">[REUSE] btn-primary</span>Talk to an Expert</a>
+      </div>
+      <div>
+        <div style="font-size:12px;font-weight:bold;text-transform:uppercase;letter-spacing:1px;color:#aaa;margin-bottom:14px">Core Expertise</div>
+        <ul class="c2-exp-list">
+          <li><strong>ERP:</strong> Epicor implementation, optimization, extensions</li>
+          <li><strong>Integration:</strong> BizTalk Server, Service Connect, BAQ</li>
+          <li><strong>Analytics:</strong> Power BI, SSRS, BAQ-driven reporting</li>
+          <li><strong>Custom Dev:</strong> MES, enterprise apps, ETL pipelines</li>
+          <li><strong>Industries:</strong> Manufacturing, distribution, professional services</li>
+          <li><strong>Delivery:</strong> On-site and remote · US, Europe, UAE</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS — 2 COLUMN ===== -->
+<!-- NEW COMPONENT: TestimonialsGrid (2-column) -->
+<section class="c2-testimonials cmp">
+  <span class="badge badge-n">[NEW] TestimonialsGrid</span>
+  <div class="wrap">
+    <h2 class="c2-t-h2">What clients say</h2>
+    <div class="grid-2">
+      <div class="c2-testimonial">
+        <p class="c2-t-quote">"WinIT didn't just implement ERP — they helped us rethink our processes. We now close the books in days, not weeks."</p>
+        <div class="c2-t-author">— VP Finance, discrete manufacturing</div>
+      </div>
+      <div class="c2-testimonial">
+        <p class="c2-t-quote">"The integration work was clean and documented. Our team can maintain it. That was non-negotiable for us."</p>
+        <div class="c2-t-author">— IT Director, distribution</div>
+      </div>
+      <div class="c2-testimonial">
+        <p class="c2-t-quote">"We finally have one system of record. No more reconciling spreadsheets across plants."</p>
+        <div class="c2-t-author">— COO, multi-site manufacturer</div>
+      </div>
+      <div class="c2-testimonial" style="border:1px dashed #ddd;background:#fafafa;display:flex;align-items:center;justify-content:center">
+        <div style="text-align:center;color:#ccc;font-size:13px">[ Testimonial placeholder ]</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA BANNER ===== -->
+<!-- REUSABLE: cta-banner -->
+<section class="c2-cta cmp">
+  <span class="badge badge-r">[REUSE] cta-banner</span>
+  <div class="wrap">
+    <h2 class="c2-cta-h2">Ready to simplify your systems?</h2>
+    <p class="c2-cta-sub">Schedule a discovery call. No pitch — we'll focus on your goals and whether we're a fit.</p>
+    <a href="#" class="btn-outline-wht">Schedule a Discovery Call</a>
+  </div>
+</section>
+
+<!-- ===== CONTACT — 3 OFFICES + FORM ===== -->
+<!-- NEW COMPONENT: ContactMultiOffice -->
+<section style="padding:72px 0" class="cmp">
+  <span class="badge badge-n">[NEW] ContactMultiOffice</span>
+  <div class="wrap">
+    <h2 class="c2-contact-h2">Contact Us</h2>
+    <p class="c2-contact-sub">Have any questions? We are always open to talk about your business, new projects, and how we can help you.</p>
+
+    <div class="c2-offices-row">
+      <div class="c2-office-card">
+        <div class="c2-office-region">North America</div>
+        <div class="c2-office-name">USA</div>
+        <div class="c2-office-addr">North Livermore Ave<br>Livermore, CA</div>
+      </div>
+      <div class="c2-office-card">
+        <div class="c2-office-region">Europe</div>
+        <div class="c2-office-name">Portugal</div>
+        <div class="c2-office-addr">Rua Jose Antunes Guimaraes<br>Braga, Portugal</div>
+      </div>
+      <div class="c2-office-card">
+        <div class="c2-office-region">Middle East</div>
+        <div class="c2-office-name">UAE</div>
+        <div class="c2-office-addr">Al Khabeesi Bldg<br>Dubai, UAE</div>
+      </div>
+    </div>
+
+    <div class="c2-contact-grid">
+      <div class="c2-contact-info">
+        <div class="c2-contact-detail"><span class="c2-ico"></span><span>info@winit.biz</span></div>
+        <div class="c2-contact-detail"><span class="c2-ico"></span><span>linkedin.com/company/winit-biz</span></div>
+        <div style="margin-top:20px;padding:16px;background:#f5f5f5;border:1px solid #ddd;border-radius:4px;font-size:13px;color:#666">
+          <div style="font-weight:bold;color:#333;margin-bottom:8px">Get In Touch</div>
+          We are always open to talk about your business, new projects, and how we can help you achieve your operational goals.
+        </div>
+      </div>
+      <!-- REUSABLE: contact-form -->
+      <div class="c2-form cmp">
+        <span class="badge badge-r">[REUSE] contact-form</span>
+        <div class="f-row"><label class="f-lbl">Name *</label><div class="f-input"></div></div>
+        <div class="f-row"><label class="f-lbl">Email *</label><div class="f-input"></div></div>
+        <div class="f-row"><label class="f-lbl">Company</label><div class="f-input"></div></div>
+        <div class="f-row"><label class="f-lbl">Message *</label><div class="f-ta"></div></div>
+        <div class="f-check"><div class="f-cb"></div><span>I agree to the Privacy Policy and consent to WinIT contacting me about my inquiry. (GDPR)</span></div>
+        <a href="#" class="btn btn-dark">Send message</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<!-- REUSABLE: site-footer -->
+<footer class="c2-footer cmp">
+  <span class="badge badge-r">[REUSE] site-footer</span>
+  <div class="wrap">
+    <div class="grid-4" style="margin-bottom:40px">
+      <div>
+        <span class="c2-footer-logo">WinIT</span>
+        <p class="c2-footer-tag">ERP, integration, and automation for manufacturing and enterprise.</p>
+        <div style="margin-top:16px;font-size:12px;color:#666">
+          <div>Livermore, CA · USA</div>
+          <div>Braga · Portugal</div>
+          <div>Dubai · UAE</div>
+        </div>
+      </div>
+      <div>
+        <div class="ft-title">Services</div>
+        <ul class="ft-links">
+          <li><a href="#">ERP Consulting</a></li>
+          <li><a href="#">Systems Integration</a></li>
+          <li><a href="#">Analytics &amp; BI</a></li>
+          <li><a href="#">Custom Solutions</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-title">Company</div>
+        <ul class="ft-links">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Case Studies</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-title">Legal</div>
+        <ul class="ft-links">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Cookie Policy</a></li>
+          <li><a href="#">Terms of Use</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-copy">
+      <span>© 2026 WinIT. All rights reserved.</span>
+      <span>info@winit.biz</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
