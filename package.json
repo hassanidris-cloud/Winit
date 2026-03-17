@@ -1,0 +1,13 @@
+{
+  "name": "winit",
+  "version": "1.0.0",
+  "description": "WinIT — ERP consulting, systems integration, process automation, analytics, and custom enterprise software.",
+  "private": true,
+  "scripts": {
+    "start": "npx serve . --listen 3000 --no-clipboard",
+    "dev": "npx serve . --listen 3000"
+  },
+  "devDependencies": {
+    "serve": "^14.2.6"
+  }
+}

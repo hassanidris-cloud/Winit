@@ -4,8 +4,29 @@ Premium, conversion-focused marketing site for WinIT: ERP consulting, systems in
 
 ## Quick start
 
-- Open `index.html` in a browser, or run a local server (e.g. `npx serve .` or `python -m http.server`) for best behavior with links and fonts.
-- Replace placeholder content (e.g. `[Your city, state]`, `hello@winit.biz`, `+1 (555) 123-4567`) and add final copy and imagery as needed.
+**Local development**
+
+```bash
+npm install
+npm start        # serves at http://localhost:3000
+```
+
+Or without installing dependencies:
+
+```bash
+npx serve .                  # Node
+python -m http.server 3000   # Python 3
+```
+
+**Deploy to Vercel**
+
+The repository is pre-configured with `vercel.json` (clean URLs, asset caching, security headers). Pushing to the connected branch triggers an automatic Vercel deployment. To deploy manually:
+
+```bash
+npx vercel
+```
+
+Replace placeholder content (e.g. `[Your city, state]`, `hello@winit.com`, `+1 (555) 123-4567`) and add your final copy before going live.
 
 ## Structure
 
@@ -17,6 +38,8 @@ Premium, conversion-focused marketing site for WinIT: ERP consulting, systems in
 | `privacy.html` | Privacy policy placeholder (GDPR-oriented) |
 | `cookies.html` | Cookie policy placeholder |
 | `terms.html` | Terms of use placeholder |
+| `package.json` | `npm start` / `npm run dev` — local dev server via `serve` |
+| `vercel.json` | Vercel deployment config: clean URLs, asset cache headers, security headers |
 
 ## Features
 
