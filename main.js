@@ -204,7 +204,6 @@
     initHeader();
     initMobileMenu();
     initContactForm();
-    initTestiCarousel();
     initYear();
     initReveal();
   }
