@@ -1,0 +1,13 @@
+{
+  "name": "winit-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "WinIT marketing site (static)",
+  "scripts": {
+    "dev": "serve . -l 5173 -L",
+    "start": "serve . -l 5173 -L"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}

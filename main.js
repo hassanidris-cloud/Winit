@@ -1,6 +1,6 @@
 /**
  * WinIT — Main front-end behaviour
- * Sticky header · mobile nav · contact form · testimonial carousel · scroll reveal
+ * Sticky header · mobile nav · contact form · scroll reveal
  */
 (function () {
   'use strict';
@@ -16,12 +16,20 @@
   ------------------------------------------------------------------ */
   function initHeader() {
     if (!HEADER) return;
-    function onScroll() {
+    var ticking = false;
+    function updateScrolled() {
+      ticking = false;
       if (window.scrollY > 48) HEADER.classList.add('is-scrolled');
       else HEADER.classList.remove('is-scrolled');
     }
+    function onScroll() {
+      if (!ticking) {
+        ticking = true;
+        window.requestAnimationFrame(updateScrolled);
+      }
+    }
     window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
+    updateScrolled();
   }
 
   /* ------------------------------------------------------------------
@@ -30,16 +38,23 @@
   function initMobileMenu() {
     if (!BTN_MENU || !NAV_MOBILE) return;
 
+    var firstLink = NAV_MOBILE.querySelector('a');
+
     function open() {
       BTN_MENU.setAttribute('aria-expanded', 'true');
+      BTN_MENU.setAttribute('aria-label', 'Close menu');
       NAV_MOBILE.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
+      if (firstLink) firstLink.focus();
     }
 
     function close() {
+      if (BTN_MENU.getAttribute('aria-expanded') !== 'true') return;
       BTN_MENU.setAttribute('aria-expanded', 'false');
+      BTN_MENU.setAttribute('aria-label', 'Open menu');
       NAV_MOBILE.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
+      BTN_MENU.focus();
     }
 
     BTN_MENU.addEventListener('click', function () {
@@ -67,13 +82,14 @@
     var consentEl = document.getElementById('contact-consent');
     var errName   = document.getElementById('error-name');
     var errEmail  = document.getElementById('error-email');
-    var errMsg    = document.getElementById('error-message');
+    var errMsg     = document.getElementById('error-message');
+    var errConsent = document.getElementById('error-consent');
 
     function setError(el, msg) { if (el) el.textContent = msg || ''; }
 
     function validate() {
       var ok = true;
-      setError(errName, ''); setError(errEmail, ''); setError(errMsg, '');
+      setError(errName, ''); setError(errEmail, ''); setError(errMsg, ''); setError(errConsent, '');
 
       if (!nameEl || !nameEl.value.trim()) {
         setError(errName, 'Please enter your name.');
@@ -90,7 +106,10 @@
         setError(errMsg, 'Please enter a message.');
         ok = false;
       }
-      if (!consentEl || !consentEl.checked) ok = false;
+      if (!consentEl || !consentEl.checked) {
+        setError(errConsent, 'Please agree to the privacy policy so we can contact you.');
+        ok = false;
+      }
       return ok;
     }
 
@@ -98,7 +117,7 @@
       e.preventDefault();
       if (!validate()) return;
       CONTACT_FORM.reset();
-      setError(errName, ''); setError(errEmail, ''); setError(errMsg, '');
+      setError(errName, ''); setError(errEmail, ''); setError(errMsg, ''); setError(errConsent, '');
       var submitBtn = CONTACT_FORM.querySelector('[type="submit"]');
       if (submitBtn) {
         var orig = submitBtn.textContent;
@@ -110,61 +129,6 @@
         }, 3500);
       }
     });
-  }
-
-  /* ------------------------------------------------------------------
-     Testimonial carousel
-  ------------------------------------------------------------------ */
-  function initTestiCarousel() {
-    var carousel = document.getElementById('testi-carousel');
-    var dots     = document.querySelectorAll('.testi-dot');
-    if (!carousel || !dots.length) return;
-
-    var slides  = carousel.querySelectorAll('.testi-slide');
-    if (!slides.length) return;
-
-    var current = 0;
-    var timer;
-    var AUTO_MS = 5500;
-
-    function goTo(index) {
-      slides[current].classList.remove('is-active');
-      dots[current].classList.remove('is-active');
-      dots[current].setAttribute('aria-selected', 'false');
-
-      current = (index + slides.length) % slides.length;
-
-      slides[current].classList.add('is-active');
-      dots[current].classList.add('is-active');
-      dots[current].setAttribute('aria-selected', 'true');
-    }
-
-    function startAuto() {
-      stopAuto();
-      timer = setInterval(function () { goTo(current + 1); }, AUTO_MS);
-    }
-
-    function stopAuto() { clearInterval(timer); }
-
-    dots.forEach(function (dot, i) {
-      dot.addEventListener('click', function () {
-        stopAuto();
-        goTo(i);
-        startAuto();
-      });
-    });
-
-    /* Pause on hover */
-    carousel.addEventListener('mouseenter', stopAuto);
-    carousel.addEventListener('mouseleave', startAuto);
-
-    /* Keyboard support on carousel container */
-    carousel.addEventListener('keydown', function (e) {
-      if (e.key === 'ArrowRight') { stopAuto(); goTo(current + 1); startAuto(); }
-      if (e.key === 'ArrowLeft')  { stopAuto(); goTo(current - 1); startAuto(); }
-    });
-
-    startAuto();
   }
 
   /* ------------------------------------------------------------------
